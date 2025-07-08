@@ -46,9 +46,13 @@
         .nav-link.active {
             color: #000000;
             font-weight: 600;
+        }
+
+        /* Indicador de punto para el menú de escritorio */
+        #desktop-nav .nav-link.active {
             position: relative;
         }
-        .nav-link.active::after {
+        #desktop-nav .nav-link.active::after {
             content: '';
             position: absolute;
             bottom: -6px;
@@ -58,6 +62,11 @@
             height: 6px;
             background-color: #000000;
             border-radius: 50%;
+        }
+
+        /* Fondo de color para el menú móvil activo */
+        #mobile-menu .nav-link.active {
+            background-color: #f3f4f6; /* gray-100 */
         }
     </style>
 </head>
@@ -70,7 +79,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0">
                     <a href="#" data-target="inicio" class="nav-link flex items-center text-gray-900">
-                        <i data-lucide="home" class="w-8 h-8 mr-3 text-black"></i>
+                        <img src="logo.png" alt="Logo" class="w-12 h-12 rounded-full mr-4 object-cover" onerror="this.outerHTML = `<div class='w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-xs text-gray-500 p-1 mr-4'>logo.png</div>`">
                         <div class="flex items-baseline">
                             <span class="text-4xl font-title">Analia</span>
                             <span class="text-lg font-semibold tracking-widest uppercase ml-2 font-sans">Cacciamani</span>
@@ -125,8 +134,8 @@
                         Un enfoque personalizado para potenciar el talento de cada estudiante.
                     </p>
                     <div class="mt-10">
-                         <a href="#" data-target="vision" class="nav-link-button bg-white hover:bg-gray-200 text-gray-900 font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 hover:scale-105 inline-block shadow-lg">
-                            Explorar Mi Visión
+                         <a href="#" data-target="servicios" class="nav-link-button bg-white hover:bg-gray-200 text-gray-900 font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 hover:scale-105 inline-block shadow-lg">
+                            Explorar mis Servicios
                         </a>
                     </div>
                 </div>
@@ -157,9 +166,9 @@
             <div class="bg-gray-100 py-24">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
-                        <div class="flex flex-col items-center text-center p-8 bg-white rounded-lg shadow-sm"><i data-lucide="lightbulb" class="w-12 h-12 text-black mb-4"></i><p class="text-xl text-gray-700 leading-relaxed">"Un aula alternativa, productora de cambios genuinos... Animarse a inventar nuevos caminos, interesantes atajos. Alterar, perturbar las prácticas, desarreglar lo que está aparentemente acomodado. Atreverse a desobedecer."</p><p class="mt-4 font-semibold text-gray-500">- Graciela Szyber</p></div>
-                        <div class="flex flex-col items-center text-center p-8 bg-white rounded-lg shadow-sm"><i data-lucide="shield-question" class="w-12 h-12 text-black mb-4"></i><p class="text-xl text-gray-700 leading-relaxed">"Por suerte, siempre algo se resiste, algo se nos escapa... Se trata de estar abierto a escuchar esa resistencia, esa presencia. La diferencia insiste y pide existir."</p><p class="mt-4 font-semibold text-gray-500">- Laura Duschatzky</p></div>
-                        <div class="mt-8 md:mt-0 flex items-center gap-6 p-8 bg-white rounded-lg shadow-sm"><i data-lucide="accessibility" class="w-16 h-16 text-black flex-shrink-0"></i><p class="text-xl font-semibold text-gray-900">¿Podremos sostener en las escuelas que se trata de ver al otro como <span class="font-bold">cuerpo que puede</span>?</p></div>
+                        <div class="flex flex-col items-center text-center p-8 bg-white rounded-lg shadow-sm"><i data-lucide="key-round" class="w-12 h-12 text-black mb-4"></i><p class="text-xl text-gray-700 leading-relaxed">"Un aula alternativa, productora de cambios genuinos... Animarse a inventar nuevos caminos, interesantes atajos. Alterar, perturbar las prácticas, desarreglar lo que está aparentemente acomodado. Atreverse a desobedecer."</p><p class="mt-4 font-semibold text-gray-500">- Graciela Szyber</p></div>
+                        <div class="flex flex-col items-center text-center p-8 bg-white rounded-lg shadow-sm"><i data-lucide="brain-circuit" class="w-12 h-12 text-black mb-4"></i><p class="text-xl text-gray-700 leading-relaxed">"Por suerte, siempre algo se resiste, algo se nos escapa... Se trata de estar abierto a escuchar esa resistencia, esa presencia. La diferencia insiste y pide existir."</p><p class="mt-4 font-semibold text-gray-500">- Laura Duschatzky</p></div>
+                        <div class="mt-8 md:mt-0 flex items-center gap-6 p-8 bg-white rounded-lg shadow-sm"><i data-lucide="person-standing" class="w-16 h-16 text-black flex-shrink-0"></i><p class="text-xl font-semibold text-gray-900">¿Podremos sostener en las escuelas que se trata de ver al otro como <span class="font-bold">cuerpo que puede</span>?</p></div>
                         <div class="mt-8 md:mt-0 flex items-center gap-6 p-8 bg-white rounded-lg shadow-sm"><i data-lucide="zap" class="w-16 h-16 text-black flex-shrink-0"></i><p class="text-xl font-semibold text-gray-900">¿Podremos desplegar vínculos que <span class="font-bold">habiliten y aumenten</span> nuestras potencias?</p></div>
                     </div>
                 </div>
@@ -258,8 +267,8 @@
     </main>
 
     <!-- ========== FOOTER ========== -->
-    <footer class="bg-gray-900 text-white">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-300">
+    <footer class="bg-gray-100 border-t border-gray-200">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-600">
             <p>&copy; <span id="copyright-year"></span> Analia Cacciamani. Todos los derechos reservados.</p>
         </div>
     </footer>

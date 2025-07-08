@@ -1,969 +1,414 @@
 <!DOCTYPE html>
-
 <html lang="es" class="scroll-smooth">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Soluciones Digitales Quantum - Potenciamos tu Presencia Online</title>
-
-   
-
-    <!-- Tailwind CSS -->
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
-   
-
-    <!-- Google Fonts: Inter -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-   
-
-    <!-- Script para iconos (Lucide Icons) -->
-
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-
-
-    <style>
-
-        /* Estilo base para usar la fuente Inter */
-
-        body {
-
-            font-family: 'Inter', sans-serif;
-
-        }
-
-        /* Pequeño ajuste para el desenfoque del fondo en el hero */
-
-        .backdrop-blur-sm {
-
-            -webkit-backdrop-filter: blur(4px);
-
-            backdrop-filter: blur(4px);
-
-        }
-
-        /* Estilo para el enlace de navegación activo */
-
-        .nav-link.active {
-
-            color: white;
-
-            font-weight: 600;
-
-        }
-
-       
-
-        /* --- ANIMACIONES --- */
-
-        @keyframes fadeInUp {
-
-            from {
-
-                opacity: 0;
-
-                transform: translateY(20px);
-
-            }
-
-            to {
-
-                opacity: 1;
-
-                transform: translateY(0);
-
-            }
-
-        }
-
-        @keyframes fadeInRight {
-
-            from {
-
-                opacity: 0;
-
-                transform: translateX(50px);
-
-            }
-
-            to {
-
-                opacity: 1;
-
-                transform: translateX(0);
-
-            }
-
-        }
-
-        @keyframes fadeIn {
-
-            from { opacity: 0; }
-
-            to { opacity: 1; }
-
-        }
-
-
-
-        /* Clases para aplicar animaciones */
-
-        .animate-fadeInUp {
-
-            animation: fadeInUp 0.8s ease-out forwards;
-
-        }
-
-        .animate-fadeInRight {
-
-            animation: fadeInRight 0.8s ease-out forwards;
-
-        }
-
-        .animate-fadeIn {
-
-            animation: fadeIn 0.6s ease-in-out forwards;
-
-        }
-
-       
-
-        /* Estilos para retrasos de animación */
-
-        .animation-delay-200 { animation-delay: 0.2s; }
-
-        .animation-delay-400 { animation-delay: 0.4s; }
-
-        .animation-delay-600 { animation-delay: 0.6s; }
-
-        .animation-delay-800 { animation-delay: 0.8s; }
-
-
-
-        /* Asegurar que los elementos animados empiecen ocultos */
-
-        .animated {
-
-            opacity: 0;
-
-        }
-
-
-
-        /* Estilos para el acordeón de FAQ */
-
-        .faq-answer {
-
-            transition: max-height 0.3s ease-out;
-
-            max-height: 0;
-
-            overflow: hidden;
-
-        }
-
-        .faq-question.active + .faq-answer {
-
-            max-height: 200px; /* Ajusta según el contenido */
-
-        }
-
-        .faq-question .icon-plus {
-
-            display: block;
-
-        }
-
-        .faq-question .icon-minus {
-
-            display: none;
-
-        }
-
-        .faq-question.active .icon-plus {
-
-            display: none;
-
-        }
-
-        .faq-question.active .icon-minus {
-
-            display: block;
-
-        }
-
-       
-
-        /* Estilos para la galería de productos */
-
-        .product-item {
-
-            transition: transform 0.4s ease, opacity 0.4s ease, width 0.4s ease, padding 0.4s ease, margin 0.4s ease;
-
-            overflow: hidden;
-
-        }
-
-        .product-item.hidden {
-
-            transform: scale(0.9);
-
-            opacity: 0;
-
-            width: 0;
-
-            padding: 0;
-
-            margin: 0;
-
-            /* Usamos un timeout para que el display: none no corte la animación */
-
-        }
-
-        .filter-btn.active {
-
-            background-color: #6366f1; /* indigo-500 */
-
-            color: white;
-
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-
-        }
-
-
-
-    </style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analia Cacciamani - Educación y Pensamiento Crítico</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Parisienne & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Script para iconos (Lucide Icons) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Estilos base para usar las fuentes */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #ffffff; 
+            color: #212529; /* Un negro suave para el texto principal */
+        }
+        .font-title {
+            font-family: 'Parisienne', cursive;
+        }
+        
+        /* --- ANIMACIONES --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .animate-fadeInUp { animation: fadeInUp 0.8s ease-out forwards; }
+        .animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
+        .animation-delay-200 { animation-delay: 0.2s; }
+        .animation-delay-400 { animation-delay: 0.4s; }
+        .animated { opacity: 0; }
+
+        /* Estilo para el enlace de navegación activo */
+        .nav-link.active {
+            color: #000000;
+            font-weight: 600;
+            position: relative;
+        }
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            background-color: #000000;
+            border-radius: 50%;
+        }
+    </style>
 </head>
-
-<body class="bg-gray-900 text-white">
-
-
-
-    <!-- ========== BARRA DE NAVEGACIÓN ========== -->
-
-    <header class="bg-gray-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
-
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-
-            <div class="flex items-center justify-between h-16">
-
-                <!-- Logo -->
-
-                <div class="flex-shrink-0">
-
-                    <a href="#" data-target="hero" class="nav-link text-2xl font-bold flex items-center">
-
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 text-indigo-400"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
-
-                        Quantum
-
-                    </a>
-
-                </div>
-
-                <!-- Navegación de Escritorio -->
-
-                <nav id="desktop-nav" class="hidden md:flex md:items-center md:space-x-8 text-sm">
-
-                    <a href="#" data-target="hero" class="nav-link text-gray-300 hover:text-white transition-colors duration-300 active">Inicio</a>
-
-                    <a href="#" data-target="servicios" class="nav-link text-gray-300 hover:text-white transition-colors duration-300">Servicios</a>
-
-                    <a href="#" data-target="productos" class="nav-link text-gray-300 hover:text-white transition-colors duration-300">Productos</a>
-
-                    <a href="#" data-target="nosotros" class="nav-link text-gray-300 hover:text-white transition-colors duration-300">Nosotros</a>
-
-                    <a href="#" data-target="testimonios" class="nav-link text-gray-300 hover:text-white transition-colors duration-300">Testimonios</a>
-
-                    <a href="#" data-target="contacto" class="nav-link text-gray-300 hover:text-white transition-colors duration-300">Contacto</a>
-
-                </nav>
-
-                <!-- Botón de Menú Móvil -->
-
-                <div class="md:hidden">
-
-                    <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
-
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-
-                        </svg>
-
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- Menú Móvil (oculto por defecto) -->
-
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
-
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-
-                <a href="#" data-target="hero" class="nav-link block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium active">Inicio</a>
-
-                <a href="#" data-target="servicios" class="nav-link block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">Servicios</a>
-
-                <a href="#" data-target="productos" class="nav-link block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">Productos</a>
-
-                <a href="#" data-target="nosotros" class="nav-link block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">Nosotros</a>
-
-                <a href="#" data-target="testimonios" class="nav-link block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">Testimonios</a>
-
-                <a href="#" data-target="contacto" class="nav-link block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium">Contacto</a>
-
-            </div>
-
-        </div>
-
-    </header>
-
-
-
-    <main class="pt-16">
-
-        <!-- ========== SECCIÓN HERO (Pestaña Inicio) ========== -->
-
-        <section id="hero" class="page-section relative overflow-hidden bg-gray-900">
-
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-
-                    <!-- Columna de Texto -->
-
-                    <div class="text-center md:text-left">
-
-                        <h1 class="animated animate-fadeInUp text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-
-                            Transformamos Ideas en <span class="text-indigo-400">Experiencias Digitales</span>
-
-                        </h1>
-
-                        <p class="animated animate-fadeInUp animation-delay-200 mt-6 max-w-xl mx-auto md:mx-0 text-lg md:text-xl text-gray-300">
-
-                            Somos una agencia de desarrollo y diseño que impulsa a las marcas a alcanzar su máximo potencial en el mundo digital.
-
-                        </p>
-
-                        <ul class="mt-8 space-y-4 text-left max-w-md mx-auto md:mx-0">
-
-                            <li class="animated animate-fadeInUp animation-delay-400 flex items-start"><i data-lucide="check-circle-2" class="w-6 h-6 text-green-400 mr-3 mt-1 flex-shrink-0"></i><span><strong class="text-white">Diseño Innovador:</strong> Interfaces atractivas y centradas en el usuario.</span></li>
-
-                            <li class="animated animate-fadeInUp animation-delay-600 flex items-start"><i data-lucide="check-circle-2" class="w-6 h-6 text-green-400 mr-3 mt-1 flex-shrink-0"></i><span><strong class="text-white">Código Optimizado:</strong> Soluciones rápidas, seguras y escalables.</span></li>
-
-                            <li class="animated animate-fadeInUp animation-delay-800 flex items-start"><i data-lucide="check-circle-2" class="w-6 h-6 text-green-400 mr-3 mt-1 flex-shrink-0"></i><span><strong class="text-white">Soporte Dedicado:</strong> Acompañamiento constante en cada etapa.</span></li>
-
-                        </ul>
-
-                        <div class="animated animate-fadeInUp animation-delay-800 mt-10 flex flex-wrap justify-center md:justify-start gap-4">
-
-                            <a href="#" data-target="contacto" class="nav-link bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-transform duration-300 hover:scale-105">
-
-                                Empezar Proyecto
-
-                            </a>
-
-                            <a href="#" data-target="productos" class="nav-link bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-transform duration-300 hover:scale-105">
-
-                                Ver Productos
-
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                    <!-- Columna de Imagen -->
-
-                    <div class="relative mt-12 md:mt-0">
-
-                        <div class="animated animate-fadeInRight">
-
-                            <img src="galeria/foto_hero.png" alt="Profesional del equipo Quantum trabajando" class="relative rounded-lg mx-auto z-10" onerror="this.onerror=null;this.src='https://placehold.co/600x700/22C55E/FFFFFF?text=Tu+Foto+Aquí';">
-
-                            <!-- Formas decorativas -->
-
-                            <div class="absolute -top-8 -right-8 w-40 h-40 bg-indigo-500/20 rounded-full blur-2xl"></div>
-
-                            <div class="absolute -bottom-8 -left-8 w-48 h-48 bg-purple-500/20 rounded-lg blur-2xl transform rotate-45"></div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ========== SECCIÓN SERVICIOS (Pestaña) ========== -->
-
-        <section id="servicios" class="page-section hidden py-20 bg-gray-800">
-
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-
-                <div class="text-center mb-16">
-
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">Nuestros Servicios Integrales</h2>
-
-                    <p class="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">Ofrecemos un ecosistema completo de soluciones digitales para llevar tu proyecto al siguiente nivel, cubriendo cada fase del ciclo de vida digital con excelencia y precisión.</p>
-
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                    <!-- Tarjetas de Servicio -->
-
-                    <div class="bg-gray-900 p-8 rounded-xl shadow-lg">
-
-                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-500 text-white mb-6"><i data-lucide="layout-template"></i></div>
-
-                        <h3 class="text-xl font-bold mb-4">Diseño Web UI/UX</h3>
-
-                        <p class="text-gray-400">Investigamos a fondo a tus usuarios para crear interfaces intuitivas, atractivas y accesibles. Desde wireframes y prototipos hasta el diseño final, nos aseguramos de que cada interacción sea fluida y memorable, optimizando la conversión y la retención.</p>
-
-                    </div>
-
-                    <div class="bg-gray-900 p-8 rounded-xl shadow-lg">
-
-                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-500 text-white mb-6"><i data-lucide="code-2"></i></div>
-
-                        <h3 class="text-xl font-bold mb-4">Desarrollo Web Full-Stack</h3>
-
-                        <p class="text-gray-400">Construimos aplicaciones web robustas y escalables utilizando las tecnologías más modernas. Nos encargamos tanto del frontend (lo que el usuario ve) como del backend (la lógica del servidor), garantizando un producto final cohesivo y de alto rendimiento.</p>
-
-                    </div>
-
-                    <div class="bg-gray-900 p-8 rounded-xl shadow-lg">
-
-                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-500 text-white mb-6"><i data-lucide="rocket"></i></div>
-
-                        <h3 class="text-xl font-bold mb-4">SEO y Marketing Digital</h3>
-
-                        <p class="text-gray-400">Aumentamos tu visibilidad online a través de estrategias de SEO técnico y de contenido. Creamos campañas de marketing digital personalizadas (SEM, redes sociales, email marketing) para atraer, convertir y fidelizar a tu público objetivo.</p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ========== SECCIÓN PRODUCTOS (Pestaña) ========== -->
-
-        <section id="productos" class="page-section hidden py-20 bg-gray-900">
-
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-
-                <div class="text-center mb-16">
-
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">Nuestros Productos</h2>
-
-                    <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Delicias hechas con pasión. Explora nuestras especialidades y encuentra tu favorita.</p>
-
-                </div>
-
-                <!-- Filter Buttons -->
-
-                <div id="product-filters" class="flex justify-center flex-wrap gap-3 md:gap-4 mb-12">
-
-                    <button data-filter="all" class="filter-btn active px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300">Todos</button>
-
-                    <button data-filter="panaderia" class="filter-btn px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-700 hover:bg-gray-600">Panadería</button>
-
-                    <button data-filter="pasteleria" class="filter-btn px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-700 hover:bg-gray-600">Pastelería</button>
-
-                    <button data-filter="eventos" class="filter-btn px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-700 hover:bg-gray-600">Eventos</button>
-
-                    <button data-filter="sandwicheria" class="filter-btn px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-700 hover:bg-gray-600">Sandwichería</button>
-
-                </div>
-
-                <!-- Product Gallery -->
-
-                <div id="product-gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-
-                    <!-- Pasteleria Items -->
-
-                    <div class="product-item group" data-category="pasteleria">
-
-                        <div class="relative overflow-hidden rounded-lg shadow-lg"><img src="PASTELERIA/torta_chocolate.png" alt="Torta de Chocolate" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/400x400/22C55E/FFFFFF?text=Pastelería';"><div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div><div class="absolute bottom-0 left-0 p-4"><h3 class="text-lg font-bold text-white">Torta de Chocolate</h3></div></div>
-
-                    </div>
-
-                    <div class="product-item group" data-category="pasteleria">
-
-                        <div class="relative overflow-hidden rounded-lg shadow-lg"><img src="PASTELERIA/cheesecake.png" alt="Cheesecake de Frutos Rojos" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/400x400/22C55E/FFFFFF?text=Pastelería';"><div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div><div class="absolute bottom-0 left-0 p-4"><h3 class="text-lg font-bold text-white">Cheesecake</h3></div></div>
-
-                    </div>
-
-                    <div class="product-item group" data-category="pasteleria">
-
-                        <div class="relative overflow-hidden rounded-lg shadow-lg"><img src="PASTELERIA/muffins.png" alt="Muffins" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/400x400/22C55E/FFFFFF?text=Pastelería';"><div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div><div class="absolute bottom-0 left-0 p-4"><h3 class="text-lg font-bold text-white">Muffins</h3></div></div>
-
-                    </div>
-
-
-
-                    <!-- Panaderia Items -->
-
-                    <div class="product-item group" data-category="panaderia">
-
-                        <div class="relative overflow-hidden rounded-lg shadow-lg"><img src="PANADERIA/pan_masa_madre.png" alt="Pan de Masa Madre" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/400x400/22C55E/FFFFFF?text=Panadería';"><div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div><div class="absolute bottom-0 left-0 p-4"><h3 class="text-lg font-bold text-white">Pan de Masa Madre</h3></div></div>
-
-                    </div>
-
-                    <div class="product-item group" data-category="panaderia">
-
-                        <div class="relative overflow-hidden rounded-lg shadow-lg"><img src="PANADERIA/croissants.png" alt="Croissants" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/400x400/22C55E/FFFFFF?text=Panadería';"><div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div><div class="absolute bottom-0 left-0 p-4"><h3 class="text-lg font-bold text-white">Croissants</h3></div></div>
-
-                    </div>
-
-
-
-                    <!-- Eventos Items -->
-
-                    <div class="product-item group" data-category="eventos">
-
-                        <div class="relative overflow-hidden rounded-lg shadow-lg"><img src="EVENTOS/torta_casamiento.png" alt="Torta de Casamiento" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/400x400/22C55E/FFFFFF?text=Eventos';"><div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div><div class="absolute bottom-0 left-0 p-4"><h3 class="text-lg font-bold text-white">Torta de Casamiento</h3></div></div>
-
-                    </div>
-
-                    <div class="product-item group" data-category="eventos">
-
-                        <div class="relative overflow-hidden rounded-lg shadow-lg"><img src="EVENTOS/mesa_dulce.png" alt="Mesa Dulce" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/400x400/22C55E/FFFFFF?text=Eventos';"><div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div><div class="absolute bottom-0 left-0 p-4"><h3 class="text-lg font-bold text-white">Mesa Dulce</h3></div></div>
-
-                    </div>
-
-
-
-                    <!-- Sandwicheria Items -->
-
-                    <div class="product-item group" data-category="sandwicheria">
-
-                        <div class="relative overflow-hidden rounded-lg shadow-lg"><img src="SANDWICHERIA/sandwich_crudo.png" alt="Sandwich de Crudo y Rúcula" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/400x400/22C55E/FFFFFF?text=Sandwichería';"><div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div><div class="absolute bottom-0 left-0 p-4"><h3 class="text-lg font-bold text-white">Sandwich de Crudo</h3></div></div>
-
-                    </div>
-
-                    <div class="product-item group" data-category="sandwicheria">
-
-                        <div class="relative overflow-hidden rounded-lg shadow-lg"><img src="SANDWICHERIA/sandwich_veggie.png" alt="Sandwich Veggie" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/400x400/22C55E/FFFFFF?text=Sandwichería';"><div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div><div class="absolute bottom-0 left-0 p-4"><h3 class="text-lg font-bold text-white">Sandwich Veggie</h3></div></div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ========== SECCIÓN NOSOTROS (Pestaña) ========== -->
-
-        <section id="nosotros" class="page-section hidden py-20 bg-gray-800">
-
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-
-                <div class="text-center mb-16">
-
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">Somos Arquitectos de Soluciones Digitales</h2>
-
-                    <p class="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">En Quantum, no solo escribimos código o diseñamos interfaces. Construimos puentes entre las ideas de nuestros clientes y el éxito en el mundo digital.</p>
-
-                </div>
-
-                <!-- Misión y Visión -->
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
-
-                    <div class="bg-gray-900 p-8 rounded-lg">
-
-                        <h3 class="text-2xl font-bold text-indigo-400 mb-4">Nuestra Misión</h3>
-
-                        <p class="text-gray-300">Empoderar a empresas de todos los tamaños con soluciones tecnológicas innovadoras, personalizadas y de alta calidad que generen un impacto medible y duradero.</p>
-
-                    </div>
-
-                     <div class="bg-gray-900 p-8 rounded-lg">
-
-                        <h3 class="text-2xl font-bold text-indigo-400 mb-4">Nuestra Visión</h3>
-
-                        <p class="text-gray-300">Ser la agencia digital líder en la región, reconocida por nuestra excelencia técnica, nuestra creatividad y por construir relaciones de confianza a largo plazo con nuestros clientes.</p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ========== SECCIÓN TESTIMONIOS (Pestaña) ========== -->
-
-        <section id="testimonios" class="page-section hidden py-20 bg-gray-900">
-
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-
-                <div class="text-center mb-16">
-
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">La Voz de Nuestros Clientes</h2>
-
-                     <p class="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">La confianza es nuestro mayor activo. Esto es lo que dicen quienes han trabajado con nosotros.</p>
-
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-
-                    <!-- Testimonios -->
-
-                    <div class="bg-gray-800 p-8 rounded-xl shadow-lg"><p class="text-gray-300 italic">"Quantum transformó nuestra visión en una realidad digital impresionante. Su profesionalismo es inigualable."</p><div class="mt-6 flex items-center"><img class="h-12 w-12 rounded-full object-cover" src="galeria/foto2.png" alt="Foto de perfil" onerror="this.onerror=null;this.src='https://placehold.co/100x100/22C55E/FFFFFF?text=CE';"><div class="ml-4"><p class="font-semibold text-white">Carla Estrada</p><p class="text-sm text-gray-400">CEO de Innovatech</p></div></div></div>
-
-                    <div class="bg-gray-800 p-8 rounded-xl shadow-lg"><p class="text-gray-300 italic">"El equipo no solo entregó un producto de alta calidad, sino que nos asesoró en cada paso. Los recomiendo al 100%."</p><div class="mt-6 flex items-center"><img class="h-12 w-12 rounded-full object-cover" src="galeria/foto3.png" alt="Foto de perfil" onerror="this.onerror=null;this.src='https://placehold.co/100x100/22C55E/FFFFFF?text=MJ';"><div class="ml-4"><p class="font-semibold text-white">Marcos Jiménez</p><p class="text-sm text-gray-400">Fundador de Café del Sol</p></div></div></div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ========== SECCIÓN CONTACTO (Pestaña) ========== -->
-
-        <section id="contacto" class="page-section hidden py-20 bg-gray-800">
-
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-
-                <div class="text-center mb-16">
-
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">Hablemos de tu Próximo Proyecto</h2>
-
-                    <p class="mt-4 text-lg text-gray-400">Estamos listos para escuchar tu idea y convertirla en una solución digital exitosa. Contáctanos.</p>
-
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-
-                    <!-- Formulario de Contacto -->
-
-                    <div>
-
-                        <h3 class="text-2xl font-bold mb-6">Envíanos un Mensaje</h3>
-
-                        <form action="#" method="POST" class="space-y-6">
-
-                            <div><label for="name" class="sr-only">Nombre</label><input type="text" name="name" id="name" autocomplete="name" required class="w-full bg-gray-700 border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Tu Nombre"></div>
-
-                            <div><label for="email" class="sr-only">Email</label><input type="email" name="email" id="email" autocomplete="email" required class="w-full bg-gray-700 border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Tu Correo Electrónico"></div>
-
-                            <div><label for="message" class="sr-only">Mensaje</label><textarea id="message" name="message" rows="4" required class="w-full bg-gray-700 border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Cuéntanos sobre tu proyecto..."></textarea></div>
-
-                            <div><button type="submit" class="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-colors duration-300">Enviar Mensaje</button></div>
-
-                        </form>
-
-                    </div>
-
-                    <!-- Información de Contacto y FAQ -->
-
-                    <div>
-
-                        <h3 class="text-2xl font-bold mb-6">Información de Contacto</h3>
-
-                        <div class="space-y-4 text-gray-300">
-
-                            <p class="flex items-center"><i data-lucide="map-pin" class="w-5 h-5 mr-3 text-indigo-400"></i> Plaza Azcuénaga (Av. 19 y 44), La Plata, Argentina</p>
-
-                            <p class="flex items-center"><i data-lucide="phone" class="w-5 h-5 mr-3 text-indigo-400"></i> +54 9 221 123-4567</p>
-
-                            <p class="flex items-center"><i data-lucide="mail" class="w-5 h-5 mr-3 text-indigo-400"></i> hola@quantumdigital.com.ar</p>
-
-                        </div>
-
-                        <div class="mt-8">
-
-                             <iframe class="w-full h-64 rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.748377708794!2d-57.94258962429696!3d-34.91276397284795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2e61c28c83e79%3A0x5371887337346c8e!2sPlaza%20Azcu%C3%A9naga!5e0!3m2!1ses-419!2sar!4v1720467812988!5m2!1ses-419!2sar" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-
-    <!-- ========== FOOTER ========== -->
-
-    <footer class="bg-gray-900 border-t border-gray-700">
-
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-
-            <div class="flex flex-col md:flex-row justify-between items-center">
-
-                <p class="text-gray-400 text-sm">&copy; 2024 Soluciones Digitales Quantum. Todos los derechos reservados.</p>
-
-                <div class="flex space-x-6 mt-4 md:mt-0">
-
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="twitter"></i></a>
-
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="linkedin"></i></a>
-
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="github"></i></a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </footer>
-
-
-
-    <script>
-
-        // --- SCRIPT PARA ICONOS DE LUCIDE ---
-
-        lucide.createIcons();
-
-
-
-        // --- SCRIPT PARA EL MENÚ MÓVIL ---
-
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-
-            mobileMenu.classList.toggle('hidden');
-
-        });
-
-
-
-        // --- SCRIPT PARA LA NAVEGACIÓN POR PESTAÑAS Y FAQ ---
-
-        document.addEventListener('DOMContentLoaded', function() {
-
-            const navLinks = document.querySelectorAll('.nav-link');
-
-            const pageSections = document.querySelectorAll('.page-section');
-
-
-
-            function showTab(targetId) {
-
-                pageSections.forEach(section => {
-
-                    section.classList.add('hidden');
-
-                    section.classList.remove('animate-fadeIn');
-
-                });
-
-
-
-                const targetSection = document.getElementById(targetId);
-
-                if (targetSection) {
-
-                    targetSection.classList.remove('hidden');
-
-                    if (targetId !== 'hero') {
-
-                         targetSection.classList.add('animate-fadeIn');
-
-                    }
-
-                }
-
-
-
-                document.querySelectorAll('.nav-link').forEach(link => {
-
-                    link.classList.toggle('active', link.dataset.target === targetId);
-
-                });
-
-               
-
-                mobileMenu.classList.add('hidden');
-
-                window.scrollTo(0, 0);
-
-                lucide.createIcons(); // Re-renderizar iconos en la nueva pestaña
-
-            }
-
-
-
-            navLinks.forEach(link => {
-
-                link.addEventListener('click', function(event) {
-
-                    event.preventDefault();
-
-                    const targetId = this.dataset.target;
-
-                    if (targetId) {
-
-                        showTab(targetId);
-
-                    }
-
-                });
-
-            });
-
-
-
-            // --- SCRIPT PARA EL ACORDEÓN DE FAQ ---
-
-            const faqContainer = document.getElementById('faq-accordion');
-
-            if (faqContainer) {
-
-                const faqQuestions = faqContainer.querySelectorAll('.faq-question');
-
-                faqQuestions.forEach(question => {
-
-                    question.addEventListener('click', () => {
-
-                        const currentlyActive = faqContainer.querySelector('.faq-question.active');
-
-                        if (currentlyActive && currentlyActive !== question) {
-
-                            currentlyActive.classList.remove('active');
-
-                        }
-
-                        question.classList.toggle('active');
-
-                    });
-
-                });
-
-            }
-
-           
-
-            // --- SCRIPT PARA FILTRADO DE PRODUCTOS ---
-
-            const filterContainer = document.getElementById('product-filters');
-
-            if(filterContainer) {
-
-                const filterButtons = filterContainer.querySelectorAll('.filter-btn');
-
-                const galleryItems = document.querySelectorAll('#product-gallery .product-item');
-
-
-
-                filterButtons.forEach(button => {
-
-                    button.addEventListener('click', () => {
-
-                        const currentActive = filterContainer.querySelector('.active');
-
-                        if (currentActive) {
-
-                            currentActive.classList.remove('active', 'bg-indigo-500', 'shadow-lg');
-
-                            currentActive.classList.add('bg-gray-700', 'hover:bg-gray-600');
-
-                        }
-
-                       
-
-                        button.classList.add('active', 'bg-indigo-500', 'shadow-lg');
-
-                        button.classList.remove('bg-gray-700', 'hover:bg-gray-600');
-
-                       
-
-                        const filter = button.dataset.filter;
-
-
-
-                        galleryItems.forEach(item => {
-
-                            // Ocultar con animación
-
-                            if (filter !== 'all' && item.dataset.category !== filter) {
-
-                                item.classList.add('hidden');
-
-                            } else {
-
-                                // Mostrar con animación
-
-                                setTimeout(() => {
-
-                                    item.classList.remove('hidden');
-
-                                }, 10); // Pequeño delay para que la animación funcione
-
-                            }
-
-                        });
-
-                    });
-
-                });
-
-            }
-
-
-
-
-
-            // Mostrar la pestaña de inicio por defecto
-
-            showTab('hero');
-
-            setTimeout(() => lucide.createIcons(), 100);
-
-        });
-
-    </script>
-
-
+<body class="text-gray-800">
+
+    <!-- ========== BARRA DE NAVEGACIÓN ========== -->
+    <header class="bg-white/90 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 border-b border-gray-200 shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" data-target="inicio" class="nav-link flex items-center text-gray-900">
+                        <i data-lucide="home" class="w-8 h-8 mr-3 text-black"></i>
+                        <div class="flex items-baseline">
+                            <span class="text-4xl font-title">Analia</span>
+                            <span class="text-lg font-semibold tracking-widest uppercase ml-2 font-sans">Cacciamani</span>
+                        </div>
+                    </a>
+                </div>
+                 <!-- Navegación de Escritorio -->
+                <nav id="desktop-nav" class="hidden md:flex md:items-center md:space-x-10 text-base font-medium">
+                    <a href="#" data-target="inicio" class="nav-link text-gray-500 hover:text-black transition-colors duration-300 active">Inicio</a>
+                    <a href="#" data-target="vision" class="nav-link text-gray-500 hover:text-black transition-colors duration-300">Visión</a>
+                    <a href="#" data-target="servicios" class="nav-link text-gray-500 hover:text-black transition-colors duration-300">Servicios</a>
+                    <a href="#" data-target="contacto" class="nav-link text-gray-500 hover:text-black transition-colors duration-300">Contacto</a>
+                </nav>
+                <!-- Botón de Menú Móvil -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-black focus:outline-none">
+                        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+         <!-- Menú Móvil (oculto por defecto) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="px-4 pt-4 pb-5 space-y-3">
+                <a href="#" data-target="inicio" class="nav-link block text-gray-700 hover:bg-gray-100 hover:text-black px-3 py-2 rounded-md text-base font-medium active">Inicio</a>
+                <a href="#" data-target="vision" class="nav-link block text-gray-700 hover:bg-gray-100 hover:text-black px-3 py-2 rounded-md text-base font-medium">Visión</a>
+                <a href="#" data-target="servicios" class="nav-link block text-gray-700 hover:bg-gray-100 hover:text-black px-3 py-2 rounded-md text-base font-medium">Servicios</a>
+                <a href="#" data-target="contacto" class="nav-link block text-gray-700 hover:bg-gray-100 hover:text-black px-3 py-2 rounded-md text-base font-medium">Contacto</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- ========== PESTAÑA INICIO ========== -->
+        <section id="inicio" class="page-section relative text-white overflow-hidden">
+            <!-- Imagen de fondo -->
+            <div class="absolute inset-0 z-0">
+                <img src="image_00cbbb.png" 
+                     alt="Retrato de Analia Cacciamani" 
+                     class="w-full h-full object-cover object-center"
+                     onerror="this.outerHTML = `<div class='w-full h-full bg-gray-200 flex items-center justify-center text-center text-sm text-gray-600 p-4'>Error al cargar: ${this.src.split('/').pop()}</div>`">
+                <div class="absolute inset-0 bg-black/50"></div> <!-- Overlay oscuro para legibilidad -->
+            </div>
+            
+            <!-- Contenido del Hero -->
+            <div class="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-48">
+                <div class="max-w-3xl text-left animated animate-fadeInUp">
+                    <h1 class="text-6xl md:text-8xl font-title leading-tight text-white">Rediseñando la Educación</h1>
+                    <p class="mt-6 text-xl md:text-2xl text-gray-200">
+                        Un enfoque personalizado para potenciar el talento de cada estudiante.
+                    </p>
+                    <div class="mt-10">
+                         <a href="#" data-target="vision" class="nav-link-button bg-white hover:bg-gray-200 text-gray-900 font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 hover:scale-105 inline-block shadow-lg">
+                            Explorar Mi Visión
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PESTAÑA VISIÓN ========== -->
+        <section id="vision" class="page-section hidden">
+            <div class="bg-white pt-24 pb-16">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid md:grid-cols-2 gap-16 items-center">
+                        <div class="text-left">
+                            <h2 class="font-title text-7xl md:text-8xl text-gray-900 leading-tight">Mi Filosofía</h2>
+                            <div class="mt-6 text-lg text-gray-700 space-y-5">
+                                <p>Mi enfoque se nutre de una profunda influencia artística y social, motivando a cada estudiante a desarrollar un pensamiento crítico a través del diálogo y el análisis globalizado.</p>
+                                <p>El trabajo sobre el carácter y los valores constituye una base fundamental para una formación verdaderamente integral.</p>
+                                <p>Como defensora de los derechos del estudiante, creo que donde se cierra una puerta, tenemos la responsabilidad de abrir una ventana. Esto nos lleva a cuestionar: ¿cómo podemos hacerlo?, ¿quiénes pueden ayudarnos?, ¿existen otras formas de educar? A través de estas preguntas, descubrimos certezas en las respuestas.</p>
+                            </div>
+                        </div>
+                        <div class="relative mt-12 md:mt-0">
+                            <div class="aspect-w-4 aspect-h-3 w-full bg-gray-200 rounded-lg shadow-xl overflow-hidden">
+                                <img src="image_015286.jpg" alt="Foto de Analia Cacciamani con un grupo de estudiantes" class="w-full h-full object-cover" onerror="this.outerHTML = `<div class='w-full h-full bg-gray-200 flex items-center justify-center text-center text-sm text-gray-600 p-4'>Error al cargar:<br>${this.src.split('/').pop()}</div>`">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-100 py-24">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+                        <div class="flex flex-col items-center text-center p-8 bg-white rounded-lg shadow-sm"><i data-lucide="lightbulb" class="w-12 h-12 text-black mb-4"></i><p class="text-xl text-gray-700 leading-relaxed">"Un aula alternativa, productora de cambios genuinos... Animarse a inventar nuevos caminos, interesantes atajos. Alterar, perturbar las prácticas, desarreglar lo que está aparentemente acomodado. Atreverse a desobedecer."</p><p class="mt-4 font-semibold text-gray-500">- Graciela Szyber</p></div>
+                        <div class="flex flex-col items-center text-center p-8 bg-white rounded-lg shadow-sm"><i data-lucide="shield-question" class="w-12 h-12 text-black mb-4"></i><p class="text-xl text-gray-700 leading-relaxed">"Por suerte, siempre algo se resiste, algo se nos escapa... Se trata de estar abierto a escuchar esa resistencia, esa presencia. La diferencia insiste y pide existir."</p><p class="mt-4 font-semibold text-gray-500">- Laura Duschatzky</p></div>
+                        <div class="mt-8 md:mt-0 flex items-center gap-6 p-8 bg-white rounded-lg shadow-sm"><i data-lucide="accessibility" class="w-16 h-16 text-black flex-shrink-0"></i><p class="text-xl font-semibold text-gray-900">¿Podremos sostener en las escuelas que se trata de ver al otro como <span class="font-bold">cuerpo que puede</span>?</p></div>
+                        <div class="mt-8 md:mt-0 flex items-center gap-6 p-8 bg-white rounded-lg shadow-sm"><i data-lucide="zap" class="w-16 h-16 text-black flex-shrink-0"></i><p class="text-xl font-semibold text-gray-900">¿Podremos desplegar vínculos que <span class="font-bold">habiliten y aumenten</span> nuestras potencias?</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PESTAÑA SERVICIOS ========== -->
+        <section id="servicios" class="page-section hidden">
+            <div class="bg-white pt-24 pb-16">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="font-title text-7xl md:text-8xl text-gray-900">Servicios Pedagógicos</h2>
+                        <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">Soluciones adaptadas a las necesidades únicas de cada trayectoria escolar.</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-16 items-center mb-16">
+                        <div class="space-y-4 text-lg">
+                            <h3 class="text-3xl font-bold text-gray-900 mb-4">Diseño de Trayectorias Educativas Específicas</h3>
+                            <p>Acompaño a familias y estudiantes que, por dificultades de aprendizaje o necesidades particulares, requieren alternativas al sistema escolar tradicional. Brindo soluciones con un acompañamiento pedagógico personalizado y acceso a un campus virtual con certificación oficial, legalizada por el Ministerio de Educación.</p>
+                            <p>Mi enfoque trasciende lo académico para construir un camino de aprendizaje adaptado a cada estudiante, respetando sus tiempos, necesidades e intereses, en colaboración con un equipo de profesionales.</p>
+                            <div class="mt-8 pt-6 border-t border-gray-200">
+                                <p class="text-gray-600 italic">"El final de la trayectoria escolar de mi hija y su ingreso a Medicina son la prueba de que, con constancia y el apoyo adecuado, se pueden sortear dificultades como la dislexia."</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-rows-2 gap-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <img src="Servicios/foto_arriba_1.jpg" alt="Foto del servicio 1" class="aspect-square w-full h-full object-cover rounded-lg shadow-md bg-gray-200" onerror="this.outerHTML = `<div class='aspect-square bg-gray-200 rounded-lg flex items-center justify-center shadow-md text-center text-xs text-gray-500 p-2'>Error:<br>Servicios/foto_arriba_1.jpg</div>`">
+                                <img src="Servicios/foto_arriba_2.jpg" alt="Foto del servicio 2" class="aspect-square w-full h-full object-cover rounded-lg shadow-md bg-gray-200" onerror="this.outerHTML = `<div class='aspect-square bg-gray-200 rounded-lg flex items-center justify-center shadow-md text-center text-xs text-gray-500 p-2'>Error:<br>Servicios/foto_arriba_2.jpg</div>`">
+                            </div>
+                            <div>
+                                <img src="Servicios/foto_abajo_grande.jpg" alt="Foto del servicio 3" class="w-full h-full object-cover rounded-lg shadow-md bg-gray-200" onerror="this.outerHTML = `<div class='aspect-video bg-gray-200 rounded-lg flex items-center justify-center shadow-md text-center text-xs text-gray-500 p-2'>Error:<br>Servicios/foto_abajo_grande.jpg</div>`">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-24">
+                        <h3 class="text-4xl font-bold text-center mb-12 text-gray-900">Galería de Proyectos</h3>
+                        <div class="space-y-16">
+                            <!-- Galería Primario -->
+                            <div>
+                                <h4 class="text-3xl font-semibold text-center mb-8">Nivel Inicial - Primario</h4>
+                                <div id="gallery-primario" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <!-- JS generará las imágenes aquí -->
+                                </div>
+                            </div>
+                            <!-- Galería Secundario -->
+                            <div>
+                                <h4 class="text-3xl font-semibold text-center mb-8">Nivel Avanzado - Secundario</h4>
+                                <div id="gallery-secundario" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <!-- JS generará las imágenes aquí -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PESTAÑA CONTACTO ========== -->
+        <section id="contacto" class="page-section hidden">
+            <div class="bg-gray-100 py-24">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="font-title text-7xl md:text-8xl text-gray-900">Contacto</h2>
+                        <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">Iniciemos una conversación para construir juntos un nuevo camino.</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+                        <div class="text-lg text-gray-700 space-y-5">
+                            <h3 class="text-3xl font-bold text-gray-900">Sobre Mí</h3>
+                            <p>Soy profesora de educación especial con 16 años de experiencia en educación en el hogar. Impulsada por el potencial del trabajo individualizado y el respeto por el ritmo de aprendizaje, me especialicé en inteligencias múltiples, diseño universal del aprendizaje (DUA) y otras pedagogías alternativas.</p>
+                            <p>Mi misión es acompañar la trayectoria educativa de cada estudiante, ayudándole a descubrir sus fortalezas y a trabajar en sus debilidades, con el apoyo de un equipo de maestras de distintas áreas.</p>
+                            <div class="mt-10 pt-8 border-t border-gray-200">
+                                <h4 class="text-2xl font-bold mb-6 text-center text-gray-900">Ponte en Contacto</h4>
+                                <div class="flex justify-center items-center space-x-8">
+                                    <!-- WhatsApp Icon Link -->
+                                    <a href="https://wa.me/5491152495584" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-black transition-transform duration-300 hover:scale-110" aria-label="Enviar mensaje por WhatsApp">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.456l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 4.315 1.731 6.086l-.515 1.887 1.911-.509z"/>
+                                        </svg>
+                                    </a>
+                                    <!-- Mail Icon Button -->
+                                    <button id="open-email-modal" class="text-gray-500 hover:text-black transition-transform duration-300 hover:scale-110" aria-label="Mostrar correo electrónico">
+                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect width="20" height="16" x="2" y="4" rx="2"/>
+                                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <img src="image_00cbbb.png" alt="Foto de perfil de Analia Cacciamani" class="rounded-lg shadow-xl mx-auto" onerror="this.outerHTML = `<div class='w-full h-full bg-gray-200 flex items-center justify-center text-center text-sm text-gray-600 p-4 rounded-lg shadow-xl'>Error al cargar:<br>${this.src.split('/').pop()}</div>`">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-300">
+            <p>&copy; <span id="copyright-year"></span> Analia Cacciamani. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- ========== Email Modal ========== -->
+    <div id="email-modal" class="fixed inset-0 bg-black bg-opacity-60 z-[100] hidden items-center justify-center p-4">
+        <div class="bg-white p-8 rounded-lg shadow-2xl text-center w-full max-w-sm animated animate-fadeInUp">
+            <h3 class="text-2xl font-bold mb-4 text-gray-900">Correo Electrónico</h3>
+            <p id="email-text" class="text-lg bg-gray-100 p-3 rounded-md mb-6 text-gray-800 break-all">analiacacciamani@gmail.com</p>
+            <div class="flex justify-center space-x-4">
+                <button id="copy-email-button" class="bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-300 font-semibold">Copiar</button>
+                <button id="close-modal-button" class="bg-gray-300 text-black px-6 py-2 rounded-lg hover:bg-gray-400 transition-colors duration-300 font-semibold">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- SCRIPT PARA ICONOS DE LUCIDE ---
+            lucide.createIcons();
+
+            // --- SCRIPT PARA EL AÑO DEL COPYRIGHT ---
+            document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+            // --- SCRIPT PARA EL MENÚ MÓVIL ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // --- SCRIPT PARA LA NAVEGACIÓN POR PESTAÑAS ---
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pageSections = document.querySelectorAll('.page-section');
+            const navLinkButtons = document.querySelectorAll('.nav-link-button');
+
+            function showTab(targetId) {
+                pageSections.forEach(section => {
+                    if (section.id === targetId) {
+                        section.classList.remove('hidden');
+                        section.classList.add('animate-fadeIn');
+                    } else {
+                        section.classList.add('hidden');
+                        section.classList.remove('animate-fadeIn');
+                    }
+                });
+
+                // Actualizar estado activo en enlaces de navegación
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.dataset.target === targetId);
+                });
+                
+                // Ocultar menú móvil después de la selección
+                mobileMenu.classList.add('hidden');
+                window.scrollTo(0, 0);
+                lucide.createIcons();
+            }
+
+            // Event listeners para enlaces de navegación
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.dataset.target;
+                    if (targetId) {
+                        showTab(targetId);
+                    }
+                });
+            });
+
+            // Event listeners para botones que también son enlaces de navegación
+            navLinkButtons.forEach(button => {
+                 button.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.dataset.target;
+                    if (targetId) {
+                        showTab(targetId);
+                    }
+                });
+            });
+            
+            // --- SCRIPT PARA EL MODAL DE EMAIL ---
+            const emailModal = document.getElementById('email-modal');
+            const openEmailModalButton = document.getElementById('open-email-modal');
+            const closeModalButton = document.getElementById('close-modal-button');
+            const copyEmailButton = document.getElementById('copy-email-button');
+            const emailText = document.getElementById('email-text').textContent;
+
+            openEmailModalButton.addEventListener('click', () => {
+                emailModal.classList.remove('hidden');
+                emailModal.classList.add('flex');
+            });
+
+            closeModalButton.addEventListener('click', () => {
+                emailModal.classList.add('hidden');
+                emailModal.classList.remove('flex');
+            });
+            
+            // Cerrar modal al hacer clic fuera de él
+            emailModal.addEventListener('click', (event) => {
+                if (event.target === emailModal) {
+                    emailModal.classList.add('hidden');
+                    emailModal.classList.remove('flex');
+                }
+            });
+
+            copyEmailButton.addEventListener('click', () => {
+                const textarea = document.createElement('textarea');
+                textarea.value = emailText;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+
+                copyEmailButton.textContent = '¡Copiado!';
+                setTimeout(() => {
+                    copyEmailButton.textContent = 'Copiar';
+                }, 2000);
+            });
+
+            // --- SCRIPT PARA LAS GALERÍAS DE IMÁGENES ---
+            function setupGallery(galleryId, imagePaths) {
+                const gallery = document.getElementById(galleryId);
+                if (!gallery) return;
+
+                imagePaths.forEach(path => {
+                    const img = document.createElement('img');
+                    img.src = path;
+                    img.alt = `Proyecto de ${galleryId.includes('primario') ? 'Nivel Primario' : 'Nivel Secundario'}`;
+                    img.className = 'aspect-square w-full h-full object-cover rounded-lg shadow-sm bg-gray-200';
+                    img.onerror = function() {
+                        this.outerHTML = `<div class='aspect-square bg-gray-200 rounded-lg flex items-center justify-center shadow-sm text-center text-xs text-gray-500 p-2'>Error:<br>${path}</div>`;
+                    };
+                    gallery.appendChild(img);
+                });
+            }
+
+            // Crear listas de imágenes
+            const primarioImages = Array.from({ length: 16 }, (_, i) => `Primario/foto${i + 1}.jpg`);
+            const secundarioImages = Array.from({ length: 8 }, (_, i) => `Secundario/foto${i + 1}.jpg`);
+
+            // Inicializar galerías
+            setupGallery('gallery-primario', primarioImages);
+            setupGallery('gallery-secundario', secundarioImages);
+
+            // Mostrar la pestaña de inicio por defecto
+            showTab('inicio');
+        });
+    </script>
 
 </body>
-
 </html>

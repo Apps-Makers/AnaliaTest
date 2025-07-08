@@ -394,21 +394,50 @@
                 const gallery = document.getElementById(galleryId);
                 if (!gallery) return;
 
-                imagePaths.forEach(path => {
+                // Función para intentar cargar una imagen con varias extensiones
+                const tryLoadImage = (basePath, extensions, container) => {
+                    const originalSrc = basePath + '.' + extensions[0]; // Para el mensaje de error
+                    
+                    const tryNextExtension = (index) => {
+                        if (index >= extensions.length) {
+                            // Si se probaron todas las extensiones y ninguna funcionó
+                            container.outerHTML = `<div class='aspect-square bg-gray-200 rounded-lg flex items-center justify-center shadow-sm text-center text-xs text-gray-500 p-2'>Error:<br>${originalSrc.split('/').pop()}</div>`;
+                            return;
+                        }
+
+                        const path = basePath + '.' + extensions[index];
+                        const tempImg = new Image();
+                        tempImg.src = path;
+                        
+                        tempImg.onload = () => {
+                            // La imagen existe, la asignamos al elemento img real
+                            container.src = path;
+                        };
+                        
+                        tempImg.onerror = () => {
+                            // La imagen no existe, probamos la siguiente extensión
+                            tryNextExtension(index + 1);
+                        };
+                    };
+
+                    tryNextExtension(0);
+                };
+
+                imagePaths.forEach(basePath => {
                     const img = document.createElement('img');
-                    img.src = path;
                     img.alt = `Proyecto de ${galleryId.includes('primario') ? 'Nivel Primario' : 'Nivel Secundario'}`;
                     img.className = 'aspect-square w-full h-full object-cover rounded-lg shadow-sm bg-gray-200';
-                    img.onerror = function() {
-                        this.outerHTML = `<div class='aspect-square bg-gray-200 rounded-lg flex items-center justify-center shadow-sm text-center text-xs text-gray-500 p-2'>Error:<br>${path}</div>`;
-                    };
+                    
+                    // Llama a la función para probar extensiones
+                    tryLoadImage(basePath, ['jpg', 'jpeg', 'png', 'JPG', 'JPEG', 'PNG'], img);
+                    
                     gallery.appendChild(img);
                 });
             }
 
-            // Crear listas de imágenes
-            const primarioImages = Array.from({ length: 16 }, (_, i) => `Primario/foto${i + 1}.jpg`);
-            const secundarioImages = Array.from({ length: 8 }, (_, i) => `Secundario/foto${i + 1}.jpg`);
+            // Crear listas de imágenes sin extensión
+            const primarioImages = Array.from({ length: 16 }, (_, i) => `Primario/foto${i + 1}`);
+            const secundarioImages = Array.from({ length: 8 }, (_, i) => `Secundario/foto${i + 1}`);
 
             // Inicializar galerías
             setupGallery('gallery-primario', primarioImages);
